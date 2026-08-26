@@ -7,6 +7,9 @@ The page is a single cinematic scroll journey: a warm café walk‑in → the QR
 a phone‑driven **scan → menu → cart → order** flow → an order‑placed moment →
 a finished‑drink turntable → an owner dashboard reveal.
 
+**Live:** https://amperor-cafe.vercel.app · **Full docs:** [DOCS.md](DOCS.md)
+(architecture, every design decision, video‑pipeline constraints, deploy/redeploy playbook, roadmap).
+
 ## Tech
 
 Static, no build step. One self‑contained [`site/index.html`](site/index.html)
