@@ -86,33 +86,69 @@
   .okdot{width:17cqw;height:17cqw;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font-size:9cqw;box-shadow:0 0 0 3cqw rgba(90,122,90,.2)}
   .okt{color:#fff;font-family:Georgia,serif;font-weight:700;font-size:5.5cqw}
   .oks{color:rgba(255,255,255,.72);font-size:3cqw;font-weight:600;letter-spacing:.08em}
-  .scr-menu{background:var(--k-bg)}
-  .mhead{position:absolute;top:0;left:0;right:0;height:15cqw;display:flex;align-items:center;justify-content:space-between;padding:9cqw 5.5cqw 0}
-  .mwm{font-family:Georgia,serif;font-weight:700;font-size:4.8cqw;color:var(--ink)}.mwm span{color:var(--sand);font-style:italic;font-weight:400}
-  .bag{width:9cqw;height:9cqw;border-radius:50%;background:var(--k-tile);display:grid;place-items:center;font-size:4.2cqw}
-  .mscroll{position:absolute;top:23cqw;left:5.5cqw;right:5.5cqw}
-  .tchip{display:inline-block;font-size:2.7cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);background:var(--k-tile);padding:1.4cqw 3cqw;border-radius:5cqw;margin-bottom:3.2cqw}
-  .mcard{display:flex;gap:3cqw;align-items:center;background:var(--k-surface);border:1px solid var(--k-line);border-radius:5cqw;padding:2.4cqw;margin-bottom:2.6cqw;box-shadow:0 3cqw 8cqw -5cqw rgba(44,40,37,.2)}
-  .mc-img{width:17cqw;height:17cqw;border-radius:4cqw;background:var(--k-tile) center/cover;flex:none}
-  .mc-b h3{font-size:3.5cqw;font-weight:700;color:var(--ink)}.mc-b p{font-size:2.6cqw;color:var(--sand);margin:.6cqw 0 1.4cqw;line-height:1.3}
-  .mc-row{display:flex;justify-content:space-between;align-items:center}.mc-row b{font-size:3.3cqw;color:var(--ink)}
-  .plus{width:7cqw;height:7cqw;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:4.2cqw;line-height:0}
-  .scr-cart{background:var(--k-bg);padding:11cqw 6cqw 6cqw;display:flex;flex-direction:column}
-  .scr-cart h3{font-family:Georgia,serif;font-size:5cqw;font-weight:700;color:var(--ink)}
-  .scr-cart .sub{font-size:2.8cqw;color:var(--sand);letter-spacing:.14em;text-transform:uppercase;margin:1cqw 0 4cqw}
-  .cline{display:flex;align-items:center;gap:3cqw;padding:2.8cqw 0;border-top:1px solid var(--k-line)}
-  .cl-img{width:12cqw;height:12cqw;border-radius:3cqw;background:var(--k-tile) center/cover;flex:none}
-  .cl-b{flex:1}.cl-b b{font-size:3.4cqw;color:var(--ink)}.cl-b span{display:block;font-size:2.7cqw;color:var(--sand)}
-  .cl-p{font-size:3.4cqw;font-weight:600;color:var(--ink)}
-  .ctot{display:flex;justify-content:space-between;align-items:center;padding:3.4cqw 0;border-top:1.6px solid var(--k-line);margin-top:auto}
-  .ctot span{font-size:3.2cqw;color:var(--sand);letter-spacing:.12em;text-transform:uppercase}.ctot b{font-size:5cqw;color:var(--ink)}
-  .cbtn{height:12cqw;border-radius:6cqw;background:var(--ink);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:3.6cqw;font-weight:700}
-  .scr-ok{background:linear-gradient(180deg,#FAF7F2,#F0E9DE);display:grid;place-items:center}
-  .okcard{background:#fff;border-radius:7cqw;padding:8cqw 7cqw;box-shadow:0 10cqw 30cqw -12cqw rgba(44,40,37,.4);text-align:center;transform:scale(.6);opacity:0;will-change:transform,opacity;transition:transform .5s cubic-bezier(.2,1.3,.4,1),opacity .4s}
+  .scr-menu{background:var(--k-bg);font-family:var(--ui)}
+  .mhead{position:absolute;top:0;left:0;right:0;height:16cqw;display:flex;align-items:center;justify-content:space-between;padding:8cqw 5.5cqw 0}
+  .mwm{display:flex;flex-direction:column;line-height:1}
+  .mwm b{font-weight:800;font-size:4.6cqw;letter-spacing:-.02em;color:var(--ink)}
+  .mwm i{font-style:normal;font-weight:700;font-size:2cqw;letter-spacing:.42em;text-transform:uppercase;color:var(--sand);margin-top:1cqw}
+  .bag{position:relative;width:9cqw;height:9cqw;display:grid;place-items:center;color:var(--ink)}
+  .bag svg{width:5.2cqw;height:5.2cqw}
+  .bag i{position:absolute;top:-.4cqw;right:-.6cqw;min-width:4.6cqw;height:4.6cqw;border-radius:50%;background:var(--ink);color:#FAF7F2;font-style:normal;font-weight:800;font-size:2.5cqw;line-height:4.6cqw;text-align:center}
+  .msearch{position:absolute;top:18.5cqw;left:5.5cqw;right:5.5cqw;height:9cqw;display:flex;align-items:center;gap:2.6cqw;background:#fff;border-radius:99cqw;padding:0 4.5cqw;box-shadow:0 2cqw 9cqw -4cqw rgba(44,40,35,.22)}
+  .msearch svg{width:3.9cqw;height:3.9cqw;color:#A89684;flex:none}
+  .msearch span{font-size:2.9cqw;color:#A89684}
+  .mgrid{position:absolute;top:31cqw;left:5.5cqw;right:5.5cqw;display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+  .mtile{background:var(--k-tile);border-radius:4.5cqw;padding:2.4cqw 2.4cqw 2.8cqw}
+  .mtile .img{aspect-ratio:4/3.2;border-radius:3.4cqw;background:var(--k-line) center/cover;margin-bottom:2.2cqw}
+  .mtile h4{font-weight:600;font-size:3cqw;line-height:1.1;color:var(--ink);margin-bottom:.6cqw}
+  .mtile p{font-size:2.2cqw;line-height:1.15;color:var(--sand);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2cqw}
+  .mtile .prow{display:flex;justify-content:space-between;align-items:center}
+  .mtile .prow b{font-weight:600;font-size:2.8cqw;color:var(--ink);font-variant-numeric:tabular-nums}
+  .mtile .add{width:6.4cqw;height:6.4cqw;border-radius:50%;background:var(--ink);color:#FAF7F2;display:grid;place-items:center;font-size:3.8cqw;line-height:0}
+  .mbar{position:absolute;left:5.5cqw;right:5.5cqw;bottom:5.5cqw;height:11cqw;background:var(--ink);border-radius:99cqw;display:flex;align-items:center;justify-content:space-between;padding:0 3.4cqw 0 5cqw;box-shadow:0 6cqw 16cqw -7cqw rgba(44,40,37,.6)}
+  .mbar .l{display:flex;align-items:center;gap:2.6cqw;color:#FAF7F2;font-weight:600;font-size:3.1cqw}
+  .mbar .l svg{width:4cqw;height:4cqw}
+  .mbar .r{display:flex;align-items:center;gap:2.6cqw}
+  .mbar .r em{font-style:normal;font-weight:700;font-size:2.1cqw;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+  .mbar .r b{font-weight:600;font-size:3.2cqw;color:#FAF7F2;font-variant-numeric:tabular-nums}
+  .scr-cart{background:var(--k-bg);font-family:var(--ui);padding:9cqw 5.5cqw 6cqw;display:flex;flex-direction:column}
+  .cohead{margin-bottom:5cqw}
+  .cohead em{display:block;font-style:normal;font-weight:700;font-size:2.4cqw;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);margin-bottom:1.6cqw}
+  .cohead h3{font-weight:800;font-size:5.6cqw;line-height:1;color:var(--ink);letter-spacing:-.02em}
+  .cocard{background:#fff;border-radius:5cqw;box-shadow:0 6cqw 18cqw -10cqw rgba(44,40,37,.26);padding:4.5cqw 5cqw;margin-bottom:5cqw}
+  .cocard .ttl{font-weight:700;font-size:2.5cqw;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);margin-bottom:3cqw}
+  .coline{display:flex;justify-content:space-between;align-items:baseline;padding:2.6cqw 0;border-top:1px solid var(--k-line)}
+  .coline:first-of-type{border-top:none;padding-top:0}
+  .coline .n{font-weight:500;font-size:3.3cqw;color:var(--ink)}
+  .coline .n em{font-style:normal;color:var(--sand);margin-right:1.4cqw}
+  .coline .p{font-weight:600;font-size:3.3cqw;color:var(--ink);font-variant-numeric:tabular-nums}
+  .cototal{display:flex;justify-content:space-between;align-items:center;margin-top:3cqw;padding-top:3.4cqw;border-top:1.6px solid var(--k-line)}
+  .cototal span{font-weight:700;font-size:3cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--sand)}
+  .cototal b{font-weight:700;font-size:5.2cqw;color:var(--ink);font-variant-numeric:tabular-nums}
+  .cobtn{margin-top:auto;height:13cqw;border-radius:99cqw;background:var(--ink);color:#FAF7F2;display:flex;align-items:center;justify-content:center;gap:2.6cqw;font-weight:600;font-size:3.6cqw}
+  .cobtn svg{width:3.6cqw;height:3.6cqw}
+  .scr-ok{background:linear-gradient(180deg,#FAF7F2,#F0E9DE);display:grid;place-items:center;font-family:var(--ui);padding:7cqw 6cqw}
+  .okcard{width:100%;text-align:center;transform:scale(.6);opacity:0;will-change:transform,opacity;transition:transform .5s cubic-bezier(.2,1.3,.4,1),opacity .4s}
   .phone.placed .okcard{transform:scale(1);opacity:1}
-  .okmark{width:16cqw;height:16cqw;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font-size:9cqw;margin:0 auto 3cqw;box-shadow:0 0 0 3cqw rgba(90,122,90,.16)}
-  .okcard h3{font-family:Georgia,serif;font-size:5.4cqw;font-weight:700;color:var(--ink)}
-  .okcard .s{font-size:2.9cqw;color:var(--sand);margin-top:1.4cqw}
+  .okmark{position:relative;width:14cqw;height:14cqw;border-radius:50%;background:var(--ink);color:#FAF7F2;display:grid;place-items:center;font-size:7.4cqw;margin:0 auto 3.4cqw}
+  .okmark::after{content:"";position:absolute;inset:-2.4cqw;border-radius:50%;border:1.4px solid #D6CABA;opacity:.7}
+  .okhead em{display:block;font-style:normal;font-weight:700;font-size:2.3cqw;letter-spacing:.32em;text-transform:uppercase;color:#A89684;margin-bottom:1.6cqw}
+  .okhead h3{font-weight:800;font-size:5.8cqw;line-height:1;color:var(--ink);letter-spacing:-.01em}
+  .okhead p{font-size:2.6cqw;line-height:1.35;color:var(--sand);margin:2cqw auto 0;max-width:46cqw}
+  .receipt{background:#fff;border-radius:4.6cqw;box-shadow:0 10cqw 26cqw -13cqw rgba(44,40,37,.42);padding:4.6cqw 5cqw;margin-top:4.6cqw;text-align:left}
+  .rbrand{text-align:center;padding-bottom:3cqw;border-bottom:1px solid var(--k-line)}
+  .rbrand em{display:block;font-style:normal;font-weight:700;font-size:1.9cqw;letter-spacing:.3em;text-transform:uppercase;color:#A89684}
+  .rbrand b{display:block;font-weight:800;font-size:4.6cqw;color:var(--ink);letter-spacing:-.01em;margin:.6cqw 0}
+  .rbrand i{display:block;font-style:normal;font-weight:700;font-size:1.9cqw;letter-spacing:.45em;text-transform:uppercase;color:#A89684}
+  .rmeta{display:flex;justify-content:space-between;padding:2.6cqw 0 0}
+  .rmeta .k{font-size:2.6cqw;color:#A89684}
+  .rmeta .v{font-size:2.6cqw;color:var(--ink);font-family:ui-monospace,Menlo,monospace;font-weight:600}
+  .rdash{border-top:1.4px dashed #D6CABA;margin:3cqw 0}
+  .ritem{display:flex;justify-content:space-between;padding:1.6cqw 0;font-weight:500;font-size:2.9cqw;color:var(--ink)}
+  .ritem .p{font-variant-numeric:tabular-nums}
+  .rtot{display:flex;justify-content:space-between;align-items:center;margin-top:1cqw}
+  .rtot span{font-weight:700;font-size:2.4cqw;letter-spacing:.26em;text-transform:uppercase;color:#A89684}
+  .rtot b{font-weight:700;font-size:4.4cqw;color:var(--ink);font-variant-numeric:tabular-nums}
 
   .cue{position:absolute;bottom:22px;left:0;right:0;text-align:center;font:700 .6rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--dmuted);z-index:9}
 
@@ -264,21 +300,40 @@
     <div class="island"></div>
     <div class="scr scr-scan" id="sScan"><div class="reticle"><span class="c2 tl"></span><span class="c2 tr"></span><span class="c2 bl"></span><span class="c2 br"></span><img src="assets/qr-brand.png" alt=""></div><div class="scanhint">Point at the code on your table</div><div class="scanok"><div class="okdot">✓</div><div class="okt">Connected</div><div class="oks">TABLE 3 · MENU READY</div></div></div>
     <div class="scr scr-menu" id="sMenu">
-      <div class="mhead"><div class="mwm">AMPEROR <span>café</span></div><div class="bag">🛍️</div></div>
-      <div class="mscroll"><span class="tchip">Table 3</span>
-        <div class="mcard"><div class="mc-img" style="background-image:url('assets/promo-latte.webp')"></div><div class="mc-b"><h3>Amperor Latte</h3><p>Silky espresso, vanilla</p><div class="mc-row"><b>AED 28</b><span class="plus">+</span></div></div></div>
-        <div class="mcard"><div class="mc-img" style="background-image:url('assets/promo-matcha.webp')"></div><div class="mc-b"><h3>Matcha Cloud</h3><p>Ceremonial matcha, oat foam</p><div class="mc-row"><b>AED 32</b><span class="plus">+</span></div></div></div>
-        <div class="mcard"><div class="mc-img" style="background-image:url('assets/promo-strawberry.webp')"></div><div class="mc-b"><h3>Strawberry Cloud</h3><p>Coconut water, strawberry foam</p><div class="mc-row"><b>AED 40</b><span class="plus">+</span></div></div></div>
+      <div class="mhead"><div class="mwm"><b>Amperor</b><i>Café</i></div><div class="bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><i>2</i></div></div>
+      <div class="msearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg><span>Search drinks &amp; bites…</span></div>
+      <div class="mgrid">
+        <div class="mtile"><div class="img" style="background-image:url('assets/promo-latte.webp')"></div><h4>Amperor Latte</h4><p>Silky espresso, vanilla</p><div class="prow"><b>AED 28.00</b><span class="add">+</span></div></div>
+        <div class="mtile"><div class="img" style="background-image:url('assets/promo-matcha.webp')"></div><h4>Matcha Cloud</h4><p>Ceremonial matcha, oat</p><div class="prow"><b>AED 32.00</b><span class="add">+</span></div></div>
+        <div class="mtile"><div class="img" style="background-image:url('assets/promo-strawberry.webp')"></div><h4>Strawberry Cloud</h4><p>Coconut, strawberry</p><div class="prow"><b>AED 40.00</b><span class="add">+</span></div></div>
+        <div class="mtile"><div class="img" style="background:linear-gradient(150deg,#7a5636,#38230f)"></div><h4>Cold Brew</h4><p>18-hour slow steep</p><div class="prow"><b>AED 26.00</b><span class="add">+</span></div></div>
       </div>
+      <div class="mbar"><span class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>View Order</span><span class="r"><em>2 items</em><b>AED 60.00</b></span></div>
     </div>
     <div class="scr scr-cart" id="sCart">
-      <h3>Your order</h3><div class="sub">Table 3</div>
-      <div class="cline"><div class="cl-img" style="background-image:url('assets/promo-latte.webp')"></div><div class="cl-b"><b>Amperor Latte</b><span>Oat · Large</span></div><div class="cl-p">AED 28</div></div>
-      <div class="cline"><div class="cl-img" style="background-image:url('assets/promo-matcha.webp')"></div><div class="cl-b"><b>Matcha Cloud</b><span>Iced</span></div><div class="cl-p">AED 32</div></div>
-      <div class="ctot"><span>Total</span><b>AED 60</b></div>
-      <div class="cbtn">Pay AED 60</div>
+      <div class="cohead"><em>Amperor Café · Table 3</em><h3>Checkout</h3></div>
+      <div class="cocard">
+        <div class="ttl">Order summary</div>
+        <div class="coline"><span class="n"><em>1×</em>Amperor Latte</span><span class="p">AED 28.00</span></div>
+        <div class="coline"><span class="n"><em>1×</em>Matcha Cloud</span><span class="p">AED 32.00</span></div>
+        <div class="cototal"><span>Total</span><b>AED 60.00</b></div>
+      </div>
+      <div class="cobtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pay AED 60.00</div>
     </div>
-    <div class="scr scr-ok" id="sOk"><div class="okcard"><div class="okmark">✓</div><h3>Order placed</h3><div class="s">Table 3 · #KD‑5736</div></div></div>
+    <div class="scr scr-ok" id="sOk"><div class="okcard">
+      <div class="okmark">✓</div>
+      <div class="okhead"><em>Order Placed</em><h3>Order Confirmed</h3><p>We're preparing it now — it'll be at your table shortly.</p></div>
+      <div class="receipt">
+        <div class="rbrand"><em>Receipt</em><b>Amperor</b><i>Café</i></div>
+        <div class="rmeta"><span class="k">Order</span><span class="v">A3F92</span></div>
+        <div class="rmeta"><span class="k">Table</span><span class="v">03</span></div>
+        <div class="rdash"></div>
+        <div class="ritem"><span>Amperor Latte</span><span class="p">AED 28.00</span></div>
+        <div class="ritem"><span>Matcha Cloud</span><span class="p">AED 32.00</span></div>
+        <div class="rdash"></div>
+        <div class="rtot"><span>Total</span><b>AED 60.00</b></div>
+      </div>
+    </div></div>
   </div></div>
 
   <div class="rotCap" id="rotCap"><span class="eyebrow" style="color:var(--accent)">Your table · your menu</span><div class="rn">It comes to you.</div><div class="rl">Matcha · Latte · Strawberry · Bites</div></div>
@@ -341,7 +396,7 @@
       heroCap=G('heroCap'),phone=G('phone'),rotCap=G('rotCap'),endveil=G('endveil'),endline=G('endline'),cue=G('cue'),
       sScan=G('sScan'),sMenu=G('sMenu'),sCart=G('sCart'),sOk=G('sOk');
   var panels=[].slice.call(document.querySelectorAll('.panel'));
-  var walkSeq=loadSeq('walkCanvas','assets/walkin/wi_',128,queue);
+  var walkSeq=loadSeq('walkCanvas','assets/walkin/wi_',160,queue);
   var ttSeq=loadSeq('ttCanvas','assets/turntable/t_',120,queue);
 
   // phone horizontal position per section index (si 0..3): center -> left -> right -> center
@@ -355,7 +410,7 @@
   // phases: glide .0-.11 | dim .12-.17 | deck .17-.72 | rise/table .72-.86 | rotate .80-.92 | resolve .92-1
   function render(p){
     var gp=Math.min(1,p/0.09);
-    walkSeq.draw(gp*0.72);
+    walkSeq.draw(gp*0.75);
     heroCap.style.opacity=Math.max(0,1-gp*2.8);
 
     var dimv=clamp((p-0.15)/0.05)*(1-clamp((p-0.72)/0.06));
