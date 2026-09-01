@@ -164,38 +164,71 @@
   .btn:hover{background:var(--accent2);transform:translateY(-2px)}
 
   /* owner dashboard reveal */
-  .owner{background:linear-gradient(180deg,#100C09,#181009);color:var(--cream);padding:clamp(90px,14vh,170px) 0;overflow:hidden}
-  .owner__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:center}
-  .owner__copy .eyebrow{color:var(--accent2)}
-  .owner__copy h2{font-size:clamp(2rem,4.4vw,3.2rem);color:var(--head);margin:.35em 0 0}
-  .owner__copy p{margin-top:18px;color:var(--dtext);line-height:1.6;font-size:1.05rem;max-width:38ch}
-  .owner__pts{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:13px}
-  .owner__pts li{padding-left:26px;position:relative;color:var(--head);font-weight:500}
-  .owner__pts li::before{content:"";position:absolute;left:0;top:6px;width:12px;height:12px;border-radius:50%;border:2px solid var(--accent)}
-  .owner__dash{background:#0d0a07;border:1px solid #2a2018;border-radius:16px;overflow:hidden;box-shadow:0 50px 100px -40px rgba(0,0,0,.85);opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+  .owner{position:relative;height:300vh;background:linear-gradient(180deg,#100C09,#181009);color:var(--cream)}
+  .owner__pin{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,7vh,80px) 0}
+  .owner__intro{max-width:640px;margin:0 auto clamp(30px,4vw,48px);text-align:center}
+  .owner__intro .eyebrow{color:var(--accent2)}
+  .owner__intro h2{font-size:clamp(2rem,4.4vw,3.1rem);color:var(--head);margin:.35em 0 0}
+  .owner__intro p{margin:16px auto 0;color:var(--dtext);line-height:1.6;font-size:1.04rem;max-width:48ch}
+  .owner__dash{width:100%;max-width:1100px;margin:0 auto;background:#fff;border:1px solid rgba(230,182,103,.14);border-radius:18px;overflow:hidden;box-shadow:0 60px 120px -50px rgba(0,0,0,.85);display:flex;opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
   .owner.in .owner__dash{opacity:1;transform:none}
-  .dash__bar{height:40px;background:#161009;border-bottom:1px solid #2a2018;display:flex;align-items:center;gap:8px;padding:0 16px}
-  .dash__bar .dot{width:11px;height:11px;border-radius:50%;background:#3a2e22}
-  .dash__url{margin-left:14px;font-size:.72rem;color:var(--dmuted);background:#0d0a07;border-radius:6px;padding:5px 14px}
-  .dash__body{padding:26px 26px 30px}
-  .dash__head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px}
-  .dash__head b{font-family:var(--serif);font-size:1.4rem;color:var(--head)}
-  .dash__head span{font-size:.72rem;color:var(--dmuted);letter-spacing:.12em;text-transform:uppercase}
-  .dash__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
-  .stat{background:#151009;border:1px solid #2a2018;border-radius:12px;padding:16px 18px}
-  .stat span{font-size:.68rem;color:var(--dmuted);letter-spacing:.08em;text-transform:uppercase;display:block}
-  .stat b{font-size:1.5rem;color:var(--head);margin-top:6px;display:block;font-weight:700}
-  .dash__orders{display:flex;flex-direction:column;gap:10px}
-  .order{background:#151009;border:1px solid #2a2018;border-radius:12px;padding:14px 18px}
-  .order--new{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 14px 34px -14px rgba(192,135,46,.45);opacity:0;transform:translateY(-14px)}
-  .owner.in .order--new{opacity:1;transform:none;transition:opacity .5s .55s ease,transform .5s .55s cubic-bezier(.2,1.2,.4,1)}
-  .o-t{font-size:.76rem;color:var(--dmuted)}
-  .o-items{color:var(--head);font-weight:600;margin:5px 0 9px}
-  .o-foot{display:flex;align-items:center;justify-content:space-between}
-  .o-price{color:var(--head);font-weight:700}
-  .o-badge{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1a130a;background:var(--accent);padding:3px 11px;border-radius:999px}
-  .o-tag{font-size:.72rem;color:var(--dmuted)}.o-tag.ready{color:#7FB27F}
-  @media(max-width:820px){.owner__grid{grid-template-columns:1fr}}
+  /* sidebar (dark) */
+  .side{width:216px;flex:none;background:#181009;color:#c9b59a;display:flex;flex-direction:column;padding:20px 15px}
+  .side__logo{display:flex;flex-direction:column;padding:6px 8px 22px}
+  .side__logo b{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
+  .side__logo b i{color:var(--accent2);font-style:italic;font-weight:400}
+  .side__logo span{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:#8a7657;margin-top:4px}
+  .side__nav{display:flex;flex-direction:column;gap:2px;flex:1}
+  .side__nav a{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:9px;font-size:.86rem;font-weight:500;color:#9c8a68;text-decoration:none;cursor:default}
+  .side__nav a svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;flex:none}
+  .side__nav a.on{background:linear-gradient(90deg,rgba(192,135,46,.26),rgba(192,135,46,.04));color:#fff;box-shadow:inset 2.5px 0 0 var(--accent)}
+  .side__u{display:flex;align-items:center;gap:10px;padding:13px 8px 2px;border-top:1px solid #2a2016;margin-top:8px}
+  .side__u .av{width:31px;height:31px;border-radius:50%;background:var(--accent);color:#1a130a;display:grid;place-items:center;font-weight:800;font-size:.78rem}
+  .side__u b{font-size:.82rem;color:#e8ddca;display:block;font-weight:600}
+  .side__u span{font-size:.66rem;color:#8a7657}
+  /* main (light) */
+  .main{flex:1;min-width:0;background:#faf7f1;display:flex;flex-direction:column}
+  .mtop{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 24px;border-bottom:1px solid #ece3d3;background:#fff}
+  .mtop .mt-t{font-family:var(--serif);font-size:1.5rem;line-height:1;color:var(--ink)}
+  .mtop .mt-s{font-size:.64rem;color:#9c8b70;letter-spacing:.1em;text-transform:uppercase;margin-top:5px}
+  .mseg{display:flex;gap:2px;background:#efe8da;border-radius:999px;padding:3px}
+  .mseg button{border:0;background:transparent;color:#8a7657;font:600 .74rem var(--sans);padding:6px 15px;border-radius:999px;cursor:default}
+  .mseg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(90,65,25,.16)}
+  .mbody{flex:1;padding:22px 24px}
+  .mkpis{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:15px}
+  .mkpi{position:relative;border-radius:14px;padding:16px 17px;overflow:hidden}
+  .mkpi::after{content:"";position:absolute;right:-30px;bottom:-44px;width:112px;height:112px;border-radius:50%;background:rgba(255,255,255,.13)}
+  .mkpi .m-ic{position:absolute;top:14px;right:14px;width:29px;height:29px;border-radius:8px;display:grid;place-items:center}
+  .mkpi .m-ic svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .mkpi .m-l{display:block;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;opacity:.82}
+  .mkpi .m-v{display:block;font-size:1.5rem;font-weight:800;margin:8px 0 5px;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap}
+  .mkpi .m-d{display:block;font-size:.69rem;font-weight:700;font-style:normal}
+  .mkpi.g1{background:linear-gradient(140deg,#2f2417,#181009);color:#fff}.mkpi.g1 .m-ic{color:#e6b667;background:rgba(230,182,103,.16)}.mkpi.g1 .m-d{color:#8Fc28F}
+  .mkpi.g2{background:linear-gradient(140deg,#d29a3f,#b0781f);color:#fff}.mkpi.g2 .m-ic{color:#fff;background:rgba(255,255,255,.2)}.mkpi.g2 .m-d{color:#fff5e2}
+  .mkpi.g3{background:linear-gradient(140deg,#f0e2c7,#e7d4aa);color:#5a3f16}.mkpi.g3 .m-ic{color:#8a5f1f;background:rgba(120,80,20,.13)}.mkpi.g3 .m-d{color:#5c7a3c}
+  .mkpi.g4{background:#fff;border:1px solid #ece3d3;color:#5a4a2f}.mkpi.g4 .m-ic{color:#a2854a;background:#f4ecdb}.mkpi.g4 .m-d{color:#c98b3a}
+  .mpanels{display:grid;grid-template-columns:1.5fr 1fr;gap:13px}
+  .mpanel{background:#fff;border:1px solid #ece3d3;border-radius:14px;padding:16px 18px}
+  .mp-h{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px}
+  .mp-t{font-weight:700;font-size:.92rem;padding-left:11px;position:relative;color:var(--ink)}
+  .mp-t::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:3px;border-radius:2px;background:var(--accent)}
+  .mp-t small{display:block;font-weight:400;color:#9c8b70;font-size:.69rem;margin-top:2px}
+  .mp-u{font-size:.58rem;color:#a2916f;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+  .lchart{display:block;width:100%;height:auto;overflow:visible}
+  .lchart .grid line{stroke:#efe6d4;stroke-width:1}
+  .lchart .yl,.lchart .xl{fill:#a2916f;font-size:9px}.lchart .yl{text-anchor:end}
+  .l-area{fill:url(#lgrad);opacity:0;transition:opacity 1s ease .3s}
+  .l-line{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+  .l-dots{opacity:0;transition:opacity .5s ease .95s}.l-dots circle{fill:#fff;stroke:var(--accent);stroke-width:2}
+  .owner.in .l-area{opacity:1}.owner.in .l-dots{opacity:1}
+  .lbars{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;height:150px;padding-top:6px}
+  .lb{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px;height:100%}
+  .lb i{width:100%;max-width:34px;height:0;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#e6b667,#c0872e);transition:height .8s cubic-bezier(.3,1,.4,1)}
+  .lb span{font-size:.6rem;color:#9c8b70;white-space:nowrap}
+  .tourDots{display:flex;gap:9px;justify-content:center;align-items:center;margin:clamp(20px,3vh,32px) auto 0}
+  .tourDots span{width:8px;height:8px;border-radius:99px;background:rgba(230,182,103,.26);transition:width .35s ease,background .35s ease}
+  .tourDots span.on{width:28px;background:var(--accent2)}
+  @media(max-width:860px){.side{display:none}.mkpis{grid-template-columns:repeat(2,1fr)}.mpanels{grid-template-columns:1fr}}
 
   /* warm cinematic close */
   .close{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;padding:80px 24px;background:#1a130c center/cover no-repeat;overflow:hidden}
@@ -344,30 +377,64 @@
 
 <div class="grain"></div>
 
-<section class="owner" id="owner"><div class="wrap owner__grid">
-  <div class="owner__copy">
+<section class="owner" id="owner"><div class="owner__pin"><div class="wrap">
+  <div class="owner__intro">
     <span class="eyebrow">For café owners</span>
-    <h2>Every order,<br><span class="grad">on one screen.</span></h2>
-    <p>The moment a guest taps pay, it lands on your bar board — synced, timed and already paid. No tickets, no phone calls, no hardware.</p>
-    <ul class="owner__pts"><li>Live bar sync</li><li>Card payment, settled</li><li>Covers &amp; revenue at a glance</li></ul>
+    <h2>Every order, <span class="grad">on one screen.</span></h2>
+    <p>The moment a guest taps pay, it lands on your dashboard — synced, timed and already paid. No tickets, no phone calls, no hardware.</p>
   </div>
   <div class="owner__dash">
-    <div class="dash__bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dash__url">dashboard.amperorcafe.com</span></div>
-    <div class="dash__body">
-      <div class="dash__head"><b>Live orders</b><span>AMPEROR CAFÉ · Today</span></div>
-      <div class="dash__stats">
-        <div class="stat"><span>Covers</span><b data-to="42">0</b></div>
-        <div class="stat"><span>Revenue</span><b data-to="3180" data-pre="AED ">AED 0</b></div>
-        <div class="stat"><span>Avg time</span><b data-to="11" data-suf=" min">0 min</b></div>
-      </div>
-      <div class="dash__orders">
-        <div class="order order--new"><div class="o-t">Table 3 · just now</div><div class="o-items">Amperor Latte · Matcha Cloud</div><div class="o-foot"><span class="o-price">AED 60</span><span class="o-badge">New</span></div></div>
-        <div class="order"><div class="o-t">Table 7 · 2 min ago</div><div class="o-items">Cold Brew</div><div class="o-foot"><span class="o-price">AED 28</span><span class="o-tag">Preparing</span></div></div>
-        <div class="order"><div class="o-t">Table 1 · 5 min ago</div><div class="o-items">Flat White · Almond Croissant</div><div class="o-foot"><span class="o-price">AED 45</span><span class="o-tag ready">Ready</span></div></div>
+    <aside class="side">
+      <div class="side__logo"><b>Amperor <i>café</i></b><span>Owner console</span></div>
+      <nav class="side__nav">
+        <a class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
+        <a><svg viewBox="0 0 24 24"><path d="M4 4h16v4H4z"/><path d="M4 12h16M4 17h10"/></svg>Menu</a>
+        <a><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Orders</a>
+        <a><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l5 3"/></svg>Tables</a>
+        <a><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M4 20a5 5 0 0 1 10 0"/><path d="M16 6a3 3 0 0 1 0 6"/></svg>Customers</a>
+        <a><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>Sales</a>
+        <a><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Analytics</a>
+        <a><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>Settings</a>
+      </nav>
+      <div class="side__u"><span class="av">JA</span><div><b>Jawad A.</b><span>Owner</span></div></div>
+    </aside>
+    <div class="main">
+      <div class="mtop"><div><div class="mt-t">Dashboard</div><div class="mt-s">Amperor Café · Today's overview</div></div><div class="mseg"><button class="on">Today</button><button>Week</button><button>Month</button></div></div>
+      <div class="mbody">
+        <div class="mkpis">
+          <div class="mkpi g1"><span class="m-ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></span><span class="m-l">Revenue</span><b class="m-v" data-to="3180" data-pre="AED ">AED 0</b><em class="m-d">▲ 12.4% vs yest.</em></div>
+          <div class="mkpi g2"><span class="m-ic"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></span><span class="m-l">Orders</span><b class="m-v" data-to="128">0</b><em class="m-d">▲ 8.1%</em></div>
+          <div class="mkpi g3"><span class="m-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M4 20a5 5 0 0 1 10 0"/><path d="M16 6a3 3 0 0 1 0 6"/></svg></span><span class="m-l">Covers</span><b class="m-v" data-to="42">0</b><em class="m-d">▲ 5.0%</em></div>
+          <div class="mkpi g4"><span class="m-ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></span><span class="m-l">Avg ticket</span><b class="m-v" data-to="25" data-pre="AED ">AED 0</b><em class="m-d">▲ 3.2%</em></div>
+        </div>
+        <div class="mpanels">
+          <div class="mpanel">
+            <div class="mp-h"><span class="mp-t">Revenue Trend<small>Paid revenue across the day</small></span><span class="mp-u">AED</span></div>
+            <svg class="lchart" id="revChart" viewBox="0 0 640 190">
+              <defs><linearGradient id="lgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C0872E" stop-opacity=".22"/><stop offset="1" stop-color="#C0872E" stop-opacity="0"/></linearGradient></defs>
+              <g class="grid"><line x1="38" y1="28" x2="632" y2="28"/><line x1="38" y1="73" x2="632" y2="73"/><line x1="38" y1="118" x2="632" y2="118"/><line x1="38" y1="160" x2="632" y2="160"/><text class="yl" x="30" y="31">600</text><text class="yl" x="30" y="76">400</text><text class="yl" x="30" y="121">200</text><text class="yl" x="30" y="163">0</text></g>
+              <path class="l-area"></path><path class="l-line"></path><g class="l-dots"></g>
+              <g><text class="xl" x="40" y="182">8a</text><text class="xl" x="138" y="182">10a</text><text class="xl" x="236" y="182">12p</text><text class="xl" x="335" y="182">2p</text><text class="xl" x="433" y="182">4p</text><text class="xl" x="531" y="182">6p</text><text class="xl" x="620" y="182" text-anchor="end">8p</text></g>
+            </svg>
+          </div>
+          <div class="mpanel">
+            <div class="mp-h"><span class="mp-t">Orders by hour<small>Volume through the day</small></span><span class="mp-u">Count</span></div>
+            <div class="lbars">
+              <div class="lb" style="--h:26%"><i></i><span>8a</span></div>
+              <div class="lb" style="--h:58%"><i></i><span>10a</span></div>
+              <div class="lb" style="--h:88%"><i></i><span>12p</span></div>
+              <div class="lb" style="--h:70%"><i></i><span>2p</span></div>
+              <div class="lb" style="--h:54%"><i></i><span>4p</span></div>
+              <div class="lb" style="--h:76%"><i></i><span>6p</span></div>
+              <div class="lb" style="--h:40%"><i></i><span>8p</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div></section>
+  <div class="tourDots"><span class="on"></span><span></span><span></span></div>
+</div></div></section>
 <footer class="footer">
   <div class="footer__grid">
     <div class="footer__brand"><div class="fwm">AMPEROR <span>café</span></div><p class="ftag">The café that comes to you. Scan, order, relax.</p></div>
@@ -385,7 +452,7 @@
   function lerp(a,b,t){return a+(b-a)*t;}
   function loadSeq(cvId,prefix,count,onload){
     var cv=document.getElementById(cvId),cx=cv.getContext('2d'),imgs=[],ready=false,last=-1;
-    function size(){if(!cv.clientWidth){requestAnimationFrame(size);return;}var d=Math.min(devicePixelRatio||1,1.25);cv.width=Math.round(cv.clientWidth*d);cv.height=Math.round(cv.clientHeight*d);last=-1;}
+    function size(){if(!cv.clientWidth){requestAnimationFrame(size);return;}var d=Math.min(devicePixelRatio||1,2);cv.width=Math.round(cv.clientWidth*d);cv.height=Math.round(cv.clientHeight*d);last=-1;}
     function pick(i){i=Math.max(0,Math.min(count-1,i));if(imgs[i]&&imgs[i].complete&&imgs[i].naturalWidth)return imgs[i];for(var d=1;d<count;d++){var a=i-d,b=i+d;if(a>=0&&imgs[a]&&imgs[a].complete&&imgs[a].naturalWidth)return imgs[a];if(b<count&&imgs[b]&&imgs[b].complete&&imgs[b].naturalWidth)return imgs[b];}return null;}
     function draw(frac){var idx=Math.round(frac*(count-1));if(idx===last)return;var img=pick(idx);if(!img)return;last=idx;var cw=cv.width,ch=cv.height,iw=img.naturalWidth,ih=img.naturalHeight,s=Math.max(cw/iw,ch/ih),w=iw*s,h=ih*s;cx.clearRect(0,0,cw,ch);cx.drawImage(img,(cw-w)/2,(ch-h)/2,w,h);}
     for(var i=1;i<=count;i++){(function(n){var im=new Image();im.decoding='async';im.onload=function(){if(!ready){ready=true;size();}last=-1;if(onload)onload();};im.src=prefix+String(n).padStart(3,'0')+'.webp';imgs[n-1]=im;})(i);}
@@ -410,7 +477,7 @@
   // phases: glide .0-.11 | dim .12-.17 | deck .17-.72 | rise/table .72-.86 | rotate .80-.92 | resolve .92-1
   function render(p){
     var gp=Math.min(1,p/0.09);
-    walkSeq.draw(gp*0.80);
+    walkSeq.draw(gp*0.97);
     heroCap.style.opacity=Math.max(0,1-gp*2.8);
 
     var dimv=clamp((p-0.15)/0.05)*(1-clamp((p-0.72)/0.06));
@@ -454,7 +521,9 @@
   var cur=prog(sec),target=cur,tick=false;
   function queue(){if(!tick){tick=true;requestAnimationFrame(function(){render(cur);tick=false;});}}
   var lastCur=-1;
-  function loop(){target=prog(sec);cur+=(target-cur)*0.12;if(Math.abs(target-cur)<0.0004)cur=target;if(cur!==lastCur){render(cur);lastCur=cur;}requestAnimationFrame(loop);}
+  // when the custom smooth-scroll is active it already eases the scroll position,
+  // so track it tightly here (0.5) to avoid a laggy double-ease; native scroll keeps the cinematic 0.12 ease.
+  function loop(){target=prog(sec);cur+=(target-cur)*((window.__ss&&window.__ss.on)?0.5:0.12);if(Math.abs(target-cur)<0.0004)cur=target;if(cur!==lastCur){render(cur);lastCur=cur;}requestAnimationFrame(loop);}
   render(cur);requestAnimationFrame(loop);
   addEventListener('resize',function(){walkSeq.size();ttSeq.size();cur=target=prog(sec);render(cur);});
 })();
@@ -464,13 +533,70 @@
   var owner=document.getElementById('owner');
   if(!owner)return;
   function countUp(){
-    [].forEach.call(owner.querySelectorAll('.stat b[data-to]'),function(el){
+    var g=++countUp._g;
+    [].forEach.call(owner.querySelectorAll('[data-to]'),function(el){
       var to=+el.getAttribute('data-to'),pre=el.getAttribute('data-pre')||'',suf=el.getAttribute('data-suf')||'',start=null;
-      function step(ts){if(!start)start=ts;var k=Math.min(1,(ts-start)/1100);var v=Math.round(to*(k*k*(3-2*k)));el.textContent=pre+v.toLocaleString()+suf;if(k<1)requestAnimationFrame(step);}
+      function step(ts){if(g!==countUp._g)return;if(!start)start=ts;var k=Math.min(1,(ts-start)/1000);var v=Math.round(to*(k*k*(3-2*k)));el.textContent=pre+v.toLocaleString()+suf;if(k<1)requestAnimationFrame(step);}
       requestAnimationFrame(step);
     });
   }
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){owner.classList.add('in');countUp();io.disconnect();}});},{threshold:.3});
+  countUp._g=0;
+  var STAGES=[
+    {nav:0,seg:0,title:'Dashboard',sub:'Amperor Café · Today’s overview',
+     kpis:[['Revenue','AED ',3180,'','▲ 12.4% vs yest.'],['Orders','',128,'','▲ 8.1%'],['Covers','',42,'','▲ 5.0%'],['Avg ticket','AED ',25,'','▲ 3.2%']],
+     c1:{t:'Revenue Trend',s:'Paid revenue across the day',u:'AED',ymax:600,yl:['600','400','200','0'],xl:['8a','10a','12p','2p','4p','6p','8p'],d:[80,220,460,520,340,300,480,560,420,300,240,160]},
+     c2:{t:'Orders by hour',s:'Volume through the day',u:'Count',b:[['8a',26],['10a',58],['12p',88],['2p',70],['4p',54],['6p',76],['8p',40]]}},
+    {nav:2,seg:0,title:'Orders',sub:'Live tickets from the floor',
+     kpis:[['Open orders','',13,'','▲ 3 in last hr'],['Avg prep','',7,'m','▼ 8% faster'],['Completed','',115,'','▲ 8.1%'],['Cancelled','',2,'','▼ 1 vs yest']],
+     c1:{t:'Orders over time',s:'Tickets through the day',u:'Count',ymax:45,yl:['45','30','15','0'],xl:['8a','10a','12p','2p','4p','6p','8p'],d:[6,12,22,30,24,20,28,34,30,22,16,10]},
+     c2:{t:'By status',s:'Orders by stage',u:'Count',b:[['New',22],['Prep',38],['Ready',30],['Done',88],['Canc',6]]}},
+    {nav:5,seg:2,title:'Sales',sub:'This month · paid revenue',
+     kpis:[['Total revenue','AED ',48350,'','▲ 18.2%'],['Paid orders','',1842,'','▲ 11.4%'],['Avg ticket','AED ',26,'','▲ 4.1%'],['Refunds','AED ',210,'','▼ 6.0%']],
+     c1:{t:'Revenue Trend',s:'Paid revenue over the month',u:'AED ’000',ymax:60,yl:['60','40','20','0'],xl:['1','5','10','15','20','25','30'],d:[8,11,10,14,13,17,16,21,19,24,23,28]},
+     c2:{t:'Top categories',s:'By revenue share',u:'AED',b:[['Coffee',100],['Matcha',62],['Cold',52],['Bites',40],['Pastry',30]]}}
+  ];
+  function drawChart(st){
+    var svg=document.getElementById('revChart');if(!svg)return;
+    var c=STAGES[st].c1,data=c.d,x0=40,x1=632,yT=28,yB=160,vMax=c.ymax;
+    var pts=data.map(function(v,i){return [x0+i*(x1-x0)/(data.length-1),yB-(Math.min(v,vMax)/vMax)*(yB-yT)];});
+    function sm(p){var d='M'+p[0][0].toFixed(1)+','+p[0][1].toFixed(1);for(var i=0;i<p.length-1;i++){var a=p[i-1]||p[i],b=p[i],q=p[i+1],e=p[i+2]||q;d+=' C'+(b[0]+(q[0]-a[0])/6).toFixed(1)+','+(b[1]+(q[1]-a[1])/6).toFixed(1)+' '+(q[0]-(e[0]-b[0])/6).toFixed(1)+','+(q[1]-(e[1]-b[1])/6).toFixed(1)+' '+q[0].toFixed(1)+','+q[1].toFixed(1);}return d;}
+    var line=sm(pts),ln=svg.querySelector('.l-line');
+    ln.setAttribute('d',line);
+    svg.querySelector('.l-area').setAttribute('d',line+' L'+pts[pts.length-1][0].toFixed(1)+','+yB+' L'+pts[0][0].toFixed(1)+','+yB+' Z');
+    var dg=svg.querySelector('.l-dots');dg.innerHTML='';
+    pts.forEach(function(p){var el=document.createElementNS('http://www.w3.org/2000/svg','circle');el.setAttribute('cx',p[0].toFixed(1));el.setAttribute('cy',p[1].toFixed(1));el.setAttribute('r','2.6');dg.appendChild(el);});
+    try{var len=ln.getTotalLength();ln.style.strokeDasharray=len;ln.style.strokeDashoffset=len;ln.getBoundingClientRect();ln.style.transition='stroke-dashoffset 1.1s ease';ln.style.strokeDashoffset=0;}catch(e){}
+  }
+  function renderStage(i){
+    var s=STAGES[i];
+    var navs=owner.querySelectorAll('.side__nav a');[].forEach.call(navs,function(a,idx){a.classList.toggle('on',idx===s.nav);});
+    var segs=owner.querySelectorAll('.mseg button');[].forEach.call(segs,function(b,idx){b.classList.toggle('on',idx===s.seg);});
+    owner.querySelector('.mt-t').textContent=s.title;owner.querySelector('.mt-s').textContent=s.sub;
+    var kp=owner.querySelectorAll('.mkpi');
+    s.kpis.forEach(function(k,idx){var cd=kp[idx];if(!cd)return;cd.querySelector('.m-l').textContent=k[0];var v=cd.querySelector('.m-v');v.setAttribute('data-pre',k[1]);v.setAttribute('data-to',k[2]);v.setAttribute('data-suf',k[3]||'');v.textContent=k[1]+'0'+(k[3]||'');cd.querySelector('.m-d').textContent=k[4];});
+    var pt=owner.querySelectorAll('.mp-t');
+    pt[0].childNodes[0].textContent=s.c1.t;pt[0].querySelector('small').textContent=s.c1.s;
+    pt[1].childNodes[0].textContent=s.c2.t;pt[1].querySelector('small').textContent=s.c2.s;
+    var pu=owner.querySelectorAll('.mp-u');pu[0].textContent=s.c1.u;pu[1].textContent=s.c2.u;
+    var yls=owner.querySelectorAll('.lchart .yl');s.c1.yl.forEach(function(t,idx){if(yls[idx])yls[idx].textContent=t;});
+    var xls=owner.querySelectorAll('.lchart .xl');s.c1.xl.forEach(function(t,idx){if(xls[idx])xls[idx].textContent=t;});
+    var lb=owner.querySelector('.lbars'),maxB=Math.max.apply(null,s.c2.b.map(function(x){return x[1];}));
+    lb.innerHTML=s.c2.b.map(function(x){return '<div class="lb"><i></i><span>'+x[0]+'</span></div>';}).join('');
+    var is=lb.querySelectorAll('i');requestAnimationFrame(function(){s.c2.b.forEach(function(x,idx){if(is[idx])is[idx].style.height=Math.round(x[1]/maxB*88)+'%';});});
+    var dots=owner.querySelectorAll('.tourDots span');[].forEach.call(dots,function(d,idx){d.classList.toggle('on',idx===i);});
+    countUp();drawChart(i);
+  }
+  var curStage=-1;
+  function stageFromScroll(){
+    var vh=window.innerHeight||1,denom=owner.offsetHeight-vh;if(denom<=8)return 0;
+    var p=(-owner.getBoundingClientRect().top)/denom;p=Math.max(0,Math.min(1,p));
+    return Math.min(STAGES.length-1,Math.floor(p*STAGES.length*0.999));
+  }
+  function updateTour(){if(!owner.classList.contains('in'))return;var st=stageFromScroll();if(st!==curStage){curStage=st;renderStage(st);}}
+  var tick=false;
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;updateTour();});}},{passive:true});
+  addEventListener('resize',function(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;updateTour();});}},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){owner.classList.add('in');curStage=-1;updateTour();io.disconnect();}});},{threshold:.01});
   io.observe(owner);
 })();
 </script>
@@ -480,5 +606,75 @@
   if(nav){var upd=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>30);};upd();addEventListener('scroll',upd,{passive:true});}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.18});
   [].forEach.call(document.querySelectorAll('.reveal'),function(el){io.observe(el);});
+})();
+</script>
+<script>
+/* Custom inertial smooth-scroll — zero dependency. Drives the REAL scroll position
+   (window.scrollTo), so position:sticky and the journey's scroll math keep working.
+   Off for touch + prefers-reduced-motion (their native scroll is already smooth/expected). */
+(function(){
+  var ss = window.__ss = {on:false};
+  try{
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if(matchMedia('(pointer: coarse)').matches) return;   // touch -> native
+  }catch(e){}
+  ss.on = true;
+
+  var EASE = 0.14;                       // higher = snappier follow, lower = floatier glide
+  var targetY = window.pageYOffset || 0, currentY = targetY, running = false;
+
+  function maxY(){ return Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
+  function clampT(){ if(targetY < 0) targetY = 0; var m = maxY(); if(targetY > m) targetY = m; }
+  function frame(){
+    var d = targetY - currentY;
+    if(Math.abs(d) < 0.4){ currentY = targetY; window.scrollTo(0, currentY); running = false; return; }
+    currentY += d * EASE;
+    window.scrollTo(0, currentY);
+    requestAnimationFrame(frame);
+  }
+  function kick(){ if(!running){ running = true; requestAnimationFrame(frame); } }
+
+  addEventListener('wheel', function(e){
+    if(e.ctrlKey) return;                                 // pinch-zoom: leave native
+    var dy = e.deltaY;
+    if(e.deltaMode === 1) dy *= 16;                       // lines -> px
+    else if(e.deltaMode === 2) dy *= window.innerHeight;  // pages -> px
+    targetY += dy; clampT();
+    e.preventDefault();
+    kick();
+  }, {passive:false});
+
+  addEventListener('keydown', function(e){
+    var t = e.target, tag = (t && t.tagName || '').toLowerCase();
+    if(tag === 'input' || tag === 'textarea' || tag === 'select' || (t && t.isContentEditable)) return;
+    if(e.metaKey || e.ctrlKey || e.altKey) return;
+    var vh = window.innerHeight, d = null;
+    switch(e.key){
+      case 'ArrowDown': d = 90; break;
+      case 'ArrowUp': d = -90; break;
+      case 'PageDown': d = vh * 0.9; break;
+      case 'PageUp': d = -vh * 0.9; break;
+      case ' ': d = (e.shiftKey ? -1 : 1) * vh * 0.9; break;
+      case 'Home': targetY = 0; clampT(); e.preventDefault(); kick(); return;
+      case 'End': targetY = maxY(); clampT(); e.preventDefault(); kick(); return;
+      default: return;
+    }
+    targetY += d; clampT(); e.preventDefault(); kick();
+  });
+
+  // adopt scrollbar drags / programmatic jumps whenever we're not the one animating
+  addEventListener('scroll', function(){ if(!running){ targetY = currentY = window.pageYOffset; } }, {passive:true});
+  addEventListener('resize', function(){ clampT(); }, {passive:true});
+
+  // smooth in-page anchor navigation (#journey, #owner, ...)
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if(!a) return;
+    var href = a.getAttribute('href'); if(!href || href.length < 2) return;   // ignore bare "#"
+    var el = document.getElementById(href.slice(1)); if(!el) return;
+    e.preventDefault();
+    targetY = (window.pageYOffset || 0) + el.getBoundingClientRect().top;
+    clampT(); kick();
+  });
 })();
 </script>
