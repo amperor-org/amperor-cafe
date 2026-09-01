@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>AMPEROR café — Scan. Order. Relax.</title>
+<title>AMPEROR café — The orders that come to you.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,9 +97,9 @@
   .msearch{position:absolute;top:18.5cqw;left:5.5cqw;right:5.5cqw;height:9cqw;display:flex;align-items:center;gap:2.6cqw;background:#fff;border-radius:99cqw;padding:0 4.5cqw;box-shadow:0 2cqw 9cqw -4cqw rgba(44,40,35,.22)}
   .msearch svg{width:3.9cqw;height:3.9cqw;color:#A89684;flex:none}
   .msearch span{font-size:2.9cqw;color:#A89684}
-  .mgrid{position:absolute;top:31cqw;left:5.5cqw;right:5.5cqw;display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
-  .mtile{background:var(--k-tile);border-radius:4.5cqw;padding:2.4cqw 2.4cqw 2.8cqw}
-  .mtile .img{aspect-ratio:4/3.2;border-radius:3.4cqw;background:var(--k-line) center/cover;margin-bottom:2.2cqw}
+  .mgrid{position:absolute;top:31cqw;left:5.5cqw;right:5.5cqw;bottom:19cqw;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3.2cqw}
+  .mtile{background:var(--k-tile);border-radius:4.5cqw;padding:2.4cqw 2.4cqw 2.8cqw;display:flex;flex-direction:column;min-height:0}
+  .mtile .img{flex:1;min-height:0;border-radius:3.4cqw;background:var(--k-line) center/cover;margin-bottom:2.2cqw}
   .mtile h4{font-weight:600;font-size:3cqw;line-height:1.1;color:var(--ink);margin-bottom:.6cqw}
   .mtile p{font-size:2.2cqw;line-height:1.15;color:var(--sand);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2cqw}
   .mtile .prow{display:flex;justify-content:space-between;align-items:center}
@@ -164,14 +164,20 @@
   .btn:hover{background:var(--accent2);transform:translateY(-2px)}
 
   /* owner dashboard reveal */
-  .owner{position:relative;height:300vh;background:linear-gradient(180deg,#100C09,#181009);color:var(--cream)}
-  .owner__pin{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,7vh,80px) 0}
-  .owner__intro{max-width:640px;margin:0 auto clamp(30px,4vw,48px);text-align:center}
+  .owner{position:relative;background:linear-gradient(180deg,#100C09,#181009);color:var(--cream);padding:clamp(70px,10vh,130px) 0}
+  .owner__pin{display:block}
+  .owner__intro{max-width:640px;margin:0 auto clamp(12px,2.2vw,26px);text-align:center}
   .owner__intro .eyebrow{color:var(--accent2)}
-  .owner__intro h2{font-size:clamp(2rem,4.4vw,3.1rem);color:var(--head);margin:.35em 0 0}
-  .owner__intro p{margin:16px auto 0;color:var(--dtext);line-height:1.6;font-size:1.04rem;max-width:48ch}
-  .owner__dash{width:100%;max-width:1100px;margin:0 auto;background:#fff;border:1px solid rgba(230,182,103,.14);border-radius:18px;overflow:hidden;box-shadow:0 60px 120px -50px rgba(0,0,0,.85);display:flex;opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
-  .owner.in .owner__dash{opacity:1;transform:none}
+  .owner__intro h2{font-size:clamp(1.7rem,3.7vw,2.7rem);color:var(--head);margin:.3em 0 0}
+  .owner__intro p{margin:10px auto 0;color:var(--dtext);line-height:1.5;font-size:.96rem;max-width:50ch}
+  /* LCD monitor housing the dashboard screen — fixed size, so it never resizes on scroll */
+  .monitor{width:100%;max-width:1124px;margin:0 auto;display:flex;flex-direction:column;align-items:center;opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+  .owner.in .monitor{opacity:1;transform:none}
+  .monitor__screen{position:relative;width:100%;height:502px;background:linear-gradient(180deg,#2c2823,#17130f);border:1px solid #3b352d;border-radius:22px;padding:16px 13px 13px;box-shadow:0 60px 110px -45px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.07);overflow:hidden}
+  .monitor__cam{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:#4b453b;box-shadow:inset 0 0 2px #000}
+  .owner__dash{width:100%;height:100%;background:#fff;border-radius:9px;overflow:hidden;display:flex}
+  .monitor__neck{width:120px;height:44px;margin-top:-1px;background:linear-gradient(180deg,#3a332a,#211c15);border-top:1px solid rgba(255,255,255,.06);clip-path:polygon(33% 0,67% 0,82% 100%,18% 100%)}
+  .monitor__base{width:270px;height:15px;margin-top:-1px;background:linear-gradient(180deg,#423a2f,#1a150f);border-radius:5px 5px 11px 11px;box-shadow:0 3px 1px -2px rgba(255,255,255,.08) inset,0 30px 34px -18px rgba(0,0,0,.8)}
   /* sidebar (dark) */
   .side{width:216px;flex:none;background:#181009;color:#c9b59a;display:flex;flex-direction:column;padding:20px 15px}
   .side__logo{display:flex;flex-direction:column;padding:6px 8px 22px}
@@ -194,7 +200,7 @@
   .mseg{display:flex;gap:2px;background:#efe8da;border-radius:999px;padding:3px}
   .mseg button{border:0;background:transparent;color:#8a7657;font:600 .74rem var(--sans);padding:6px 15px;border-radius:999px;cursor:default}
   .mseg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(90,65,25,.16)}
-  .mbody{flex:1;padding:22px 24px}
+  .mbody{flex:1;min-height:0;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
   .mkpis{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:15px}
   .mkpi{position:relative;border-radius:14px;padding:16px 17px;overflow:hidden}
   .mkpi::after{content:"";position:absolute;right:-30px;bottom:-44px;width:112px;height:112px;border-radius:50%;background:rgba(255,255,255,.13)}
@@ -202,7 +208,7 @@
   .mkpi .m-ic svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
   .mkpi .m-l{display:block;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;opacity:.82}
   .mkpi .m-v{display:block;font-size:1.5rem;font-weight:800;margin:8px 0 5px;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap}
-  .mkpi .m-d{display:block;font-size:.69rem;font-weight:700;font-style:normal}
+  .mkpi .m-d{display:block;font-size:.69rem;font-weight:700;font-style:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .mkpi.g1{background:linear-gradient(140deg,#2f2417,#181009);color:#fff}.mkpi.g1 .m-ic{color:#e6b667;background:rgba(230,182,103,.16)}.mkpi.g1 .m-d{color:#8Fc28F}
   .mkpi.g2{background:linear-gradient(140deg,#d29a3f,#b0781f);color:#fff}.mkpi.g2 .m-ic{color:#fff;background:rgba(255,255,255,.2)}.mkpi.g2 .m-d{color:#fff5e2}
   .mkpi.g3{background:linear-gradient(140deg,#f0e2c7,#e7d4aa);color:#5a3f16}.mkpi.g3 .m-ic{color:#8a5f1f;background:rgba(120,80,20,.13)}.mkpi.g3 .m-d{color:#5c7a3c}
@@ -225,19 +231,27 @@
   .lb{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px;height:100%}
   .lb i{width:100%;max-width:34px;height:0;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#e6b667,#c0872e);transition:height .8s cubic-bezier(.3,1,.4,1)}
   .lb span{font-size:.6rem;color:#9c8b70;white-space:nowrap}
-  .tourDots{display:flex;gap:9px;justify-content:center;align-items:center;margin:clamp(20px,3vh,32px) auto 0}
+  .tourDots{display:flex;gap:9px;justify-content:center;align-items:center;margin:clamp(10px,1.8vh,18px) auto 0}
   .tourDots span{width:8px;height:8px;border-radius:99px;background:rgba(230,182,103,.26);transition:width .35s ease,background .35s ease}
   .tourDots span.on{width:28px;background:var(--accent2)}
-  @media(max-width:860px){.side{display:none}.mkpis{grid-template-columns:repeat(2,1fr)}.mpanels{grid-template-columns:1fr}}
+  @media(max-width:860px){.monitor__screen{height:auto}.owner__dash{height:auto}.side{display:none}.mkpis{grid-template-columns:repeat(2,1fr)}.mpanels{grid-template-columns:1fr}.mbody{display:block}}
 
-  /* warm cinematic close */
-  .close{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;padding:80px 24px;background:#1a130c center/cover no-repeat;overflow:hidden}
-  .close__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,9,.55),rgba(20,14,9,.32) 42%,rgba(20,14,9,.82)),radial-gradient(120% 80% at 68% 22%,rgba(230,182,103,.28),transparent 55%)}
-  .close__inner{position:relative;z-index:2}
-  .close__wm{font-family:var(--serif);font-weight:700;font-size:1.8rem;color:var(--head);letter-spacing:.03em;margin-bottom:26px}
-  .close__wm span{color:var(--accent2);font-weight:600}
-  .close h2{font-size:clamp(2.6rem,7vw,5rem);color:var(--head);text-shadow:0 2px 30px rgba(0,0,0,.55)}
-  .close p{margin:20px 0 34px;color:var(--cream);opacity:.92;font-size:1.15rem}
+  /* final offer */
+  .offer{position:relative;background:linear-gradient(180deg,#14100C,#0d0a07);color:var(--cream);padding:clamp(80px,13vh,150px) 0;text-align:center;overflow:hidden}
+  .offer::before{content:"";position:absolute;inset:0;background:radial-gradient(58% 46% at 50% 0%,rgba(230,182,103,.13),transparent 62%);pointer-events:none}
+  .offer__in{position:relative;max-width:1000px;margin:0 auto;padding:0 28px}
+  .offer .eyebrow{color:var(--accent2)}
+  .offer h2{font-family:var(--serif);font-size:clamp(2rem,4.8vw,3.3rem);color:var(--head);margin:.4em 0 0;line-height:1.06}
+  .offer h2 .grad{background:linear-gradient(100deg,#F1C87E,#D89A3C 52%,#C0872E);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .offer .lede{margin:20px auto 0;max-width:56ch;color:var(--dtext);line-height:1.6;font-size:1.05rem}
+  .offer__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:clamp(40px,5.5vw,64px) 0 clamp(34px,4vw,48px)}
+  .offer__card{background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid rgba(230,182,103,.16);border-radius:16px;padding:28px 26px;text-align:left}
+  .offer__card h3{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--accent2);margin-bottom:12px}
+  .offer__card p{color:var(--dtext);line-height:1.55;font-size:.95rem}
+  .offer__cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(100deg,var(--accent2),var(--accent));color:#1a130a;font-weight:700;font-size:1.06rem;padding:16px 34px;border-radius:999px;text-decoration:none;box-shadow:0 22px 50px -18px rgba(230,182,103,.5);transition:transform .2s ease,box-shadow .2s ease}
+  .offer__cta:hover{transform:translateY(-2px);box-shadow:0 28px 60px -18px rgba(230,182,103,.6)}
+  .offer__note{margin-top:18px;color:var(--dmuted);font-size:.92rem}
+  @media(max-width:760px){.offer__cards{grid-template-columns:1fr;gap:12px}}
 
   .footer{background:#100C09;color:var(--cream);padding:52px 0;border-top:1px solid rgba(255,255,255,.08)}
   .footer__grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-end;max-width:1100px;margin:0 auto;padding:0 28px}
@@ -309,7 +323,7 @@
   <a class="nav__logo" href="#journey">AMPEROR <span>café</span></a>
   <div class="nav__links">
     <a class="nav__link" href="#owner">For owners</a>
-    <a class="nav__cta" href="mailto:jawad@amperortech.com?subject=AMPEROR%20scan-to-order%20demo">Book a demo</a>
+    <a class="nav__cta" href="#offer">Get yours live</a>
   </div>
 </nav>
 
@@ -318,14 +332,14 @@
   <div class="dim" id="dim"></div>
 
   <div class="deck" id="deck">
-    <div class="panel panel--0" data-i="0"><div class="win"></div><div class="cap cap--c"><span class="eyebrow">Step one · Scan</span><h2>Scan the code on your table.</h2></div></div>
-    <div class="panel panel--1" data-i="1"><div class="win"></div><div class="cap cap--r"><span class="eyebrow">Browse</span><h2>Build your order.</h2><p>Swipe the menu, customize, add to cart in a tap.</p></div></div>
-    <div class="panel panel--2" data-i="2"><div class="win"></div><div class="cap cap--l"><span class="eyebrow">Checkout</span><h2>Pay in seconds.</h2><p>Secure card payment, right in the chat. Then sit back.</p></div></div>
+    <div class="panel panel--0" data-i="0"><div class="win"></div><div class="cap cap--c"><span class="eyebrow">Step one · Scan</span><h2>Your customer scans the QR code.</h2></div></div>
+    <div class="panel panel--1" data-i="1"><div class="win"></div><div class="cap cap--r"><span class="eyebrow">Step two · Browse</span><h2>Your customer builds their order.</h2><p>Browse the menu, customize selections and add to cart in seconds.</p></div></div>
+    <div class="panel panel--2" data-i="2"><div class="win"></div><div class="cap cap--l"><span class="eyebrow">Checkout</span><h2>Pay in seconds.</h2><p>Secure card payment, right from the ordering experience. Then sit back.</p></div></div>
     <div class="panel panel--3" data-i="3"><div class="win"></div><div class="cap cap--c"><span class="eyebrow">Done</span><h2>Order placed.</h2></div></div>
   </div>
   <div class="glow" id="glow"></div>
 
-  <div class="heroCap" id="heroCap"><div><span class="chip"><i></i>Scan · Order · Relax</span><h1>The café that<br><span class="grad">comes to you.</span></h1><p class="sub">Scan the code on your table. Order in seconds. No app, no queue.</p></div></div>
+  <div class="heroCap" id="heroCap"><div><span class="chip"><i></i>QR-Powered Ordering</span><h1>The orders that<br><span class="grad">come to you.</span></h1><p class="sub">Your customers scan, browse and order in seconds. No app. No queue. No waiting for staff.</p></div></div>
 
   <div class="confetti" id="confetti"></div>
 
@@ -336,10 +350,10 @@
       <div class="mhead"><div class="mwm"><b>Amperor</b><i>Café</i></div><div class="bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><i>2</i></div></div>
       <div class="msearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg><span>Search drinks &amp; bites…</span></div>
       <div class="mgrid">
-        <div class="mtile"><div class="img" style="background-image:url('assets/promo-latte.webp')"></div><h4>Amperor Latte</h4><p>Silky espresso, vanilla</p><div class="prow"><b>AED 28.00</b><span class="add">+</span></div></div>
-        <div class="mtile"><div class="img" style="background-image:url('assets/promo-matcha.webp')"></div><h4>Matcha Cloud</h4><p>Ceremonial matcha, oat</p><div class="prow"><b>AED 32.00</b><span class="add">+</span></div></div>
-        <div class="mtile"><div class="img" style="background-image:url('assets/promo-strawberry.webp')"></div><h4>Strawberry Cloud</h4><p>Coconut, strawberry</p><div class="prow"><b>AED 40.00</b><span class="add">+</span></div></div>
-        <div class="mtile"><div class="img" style="background:linear-gradient(150deg,#7a5636,#38230f)"></div><h4>Cold Brew</h4><p>18-hour slow steep</p><div class="prow"><b>AED 26.00</b><span class="add">+</span></div></div>
+        <div class="mtile"><div class="img" style="background-image:url('assets/menu-latte.webp')"></div><h4>Amperor Latte</h4><p>Silky espresso, vanilla</p><div class="prow"><b>AED 28.00</b><span class="add">+</span></div></div>
+        <div class="mtile"><div class="img" style="background-image:url('assets/menu-matcha.webp')"></div><h4>Matcha Cloud</h4><p>Ceremonial matcha, oat</p><div class="prow"><b>AED 32.00</b><span class="add">+</span></div></div>
+        <div class="mtile"><div class="img" style="background-image:url('assets/menu-strawberry.webp')"></div><h4>Strawberry Cloud</h4><p>Coconut, strawberry</p><div class="prow"><b>AED 40.00</b><span class="add">+</span></div></div>
+        <div class="mtile"><div class="img" style="background-image:url('assets/menu-coldbrew.webp')"></div><h4>Cold Brew</h4><p>18-hour slow steep</p><div class="prow"><b>AED 26.00</b><span class="add">+</span></div></div>
       </div>
       <div class="mbar"><span class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>View Order</span><span class="r"><em>2 items</em><b>AED 60.00</b></span></div>
     </div>
@@ -369,7 +383,7 @@
     </div></div>
   </div></div>
 
-  <div class="rotCap" id="rotCap"><span class="eyebrow" style="color:var(--accent)">Your table · your menu</span><div class="rn">It comes to you.</div><div class="rl">Matcha · Latte · Strawberry · Bites</div></div>
+  <div class="rotCap" id="rotCap"><span class="eyebrow" style="color:var(--accent)">Less waiting · more ordering</span><div class="rn">Serve more. Without doing more.</div><div class="rl">Give your customers a faster way to order while your team stays focused on service.</div></div>
   <div class="endveil" id="endveil"></div>
   <div class="endline" id="endline"><div><span class="eyebrow">AMPEROR CAFÉ</span><b>Ordered with a scan.</b></div></div>
   <div class="cue" id="cue">scroll</div>
@@ -379,11 +393,13 @@
 
 <section class="owner" id="owner"><div class="owner__pin"><div class="wrap">
   <div class="owner__intro">
-    <span class="eyebrow">For café owners</span>
-    <h2>Every order, <span class="grad">on one screen.</span></h2>
-    <p>The moment a guest taps pay, it lands on your dashboard — synced, timed and already paid. No tickets, no phone calls, no hardware.</p>
+    <span class="eyebrow">Everything, as it happens</span>
+    <h2>Every order. <span class="grad">Under control.</span></h2>
+    <p>See incoming orders, prep status and completed orders in real time — and track revenue, average spend and performance, all from one simple dashboard.</p>
   </div>
-  <div class="owner__dash">
+  <div class="monitor">
+    <div class="monitor__screen"><span class="monitor__cam"></span>
+    <div class="owner__dash">
     <aside class="side">
       <div class="side__logo"><b>Amperor <i>café</i></b><span>Owner console</span></div>
       <nav class="side__nav">
@@ -432,12 +448,31 @@
         </div>
       </div>
     </div>
+    </div>
+    </div>
+    <div class="monitor__neck"></div>
+    <div class="monitor__base"></div>
   </div>
   <div class="tourDots"><span class="on"></span><span></span><span></span></div>
 </div></div></section>
+
+<section class="offer" id="offer">
+  <div class="offer__in">
+    <span class="eyebrow">Your QR ordering system</span>
+    <h2>Built for your business.<br><span class="grad">Live in 3 days.</span></h2>
+    <p class="lede">A complete QR ordering experience customized for your café, restaurant or food business — without the cost and complexity of traditional ordering systems.</p>
+    <div class="offer__cards">
+      <div class="offer__card"><h3>Customized for you</h3><p>Your menu, branding, ordering flow and dashboard — configured around your business.</p></div>
+      <div class="offer__card"><h3>Affordable to start</h3><p>A modern ordering system without the heavy setup costs and expensive software packages.</p></div>
+      <div class="offer__card"><h3>Live in 3 days</h3><p>We set it up, customize it and get your QR ordering system ready to use in just three days.</p></div>
+    </div>
+    <a class="offer__cta" href="mailto:jawad@amperortech.com?subject=Get%20my%20QR%20ordering%20system%20live%20in%203%20days">Get Yours Live in 3 Days</a>
+    <p class="offer__note">Simple setup. Built for your business. Ready to take orders.</p>
+  </div>
+</section>
 <footer class="footer">
   <div class="footer__grid">
-    <div class="footer__brand"><div class="fwm">AMPEROR <span>café</span></div><p class="ftag">The café that comes to you. Scan, order, relax.</p></div>
+    <div class="footer__brand"><div class="fwm">AMPEROR <span>café</span></div><p class="ftag">QR ordering, built for your business. Live in three days.</p></div>
     <nav class="footer__col"><h4>Explore</h4><a href="#owner">For owners</a><a href="mailto:jawad@amperortech.com?subject=AMPEROR%20scan-to-order%20demo">Book a demo</a><a href="#">Menu</a></nav>
     <nav class="footer__col"><h4>Café</h4><a href="#">Our story</a><a href="#">Locations</a><a href="#">Careers</a></nav>
   </div>
@@ -586,17 +621,16 @@
     var dots=owner.querySelectorAll('.tourDots span');[].forEach.call(dots,function(d,idx){d.classList.toggle('on',idx===i);});
     countUp();drawChart(i);
   }
-  var curStage=-1;
-  function stageFromScroll(){
-    var vh=window.innerHeight||1,denom=owner.offsetHeight-vh;if(denom<=8)return 0;
-    var p=(-owner.getBoundingClientRect().top)/denom;p=Math.max(0,Math.min(1,p));
-    return Math.min(STAGES.length-1,Math.floor(p*STAGES.length*0.999));
-  }
-  function updateTour(){if(!owner.classList.contains('in'))return;var st=stageFromScroll();if(st!==curStage){curStage=st;renderStage(st);}}
-  var tick=false;
-  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;updateTour();});}},{passive:true});
-  addEventListener('resize',function(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;updateTour();});}},{passive:true});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){owner.classList.add('in');curStage=-1;updateTour();io.disconnect();}});},{threshold:.01});
+  // Static monitor: the dashboard auto-cycles through the views on a timer
+  // (no scroll pinning). Pauses on hover; the dots are clickable.
+  var cur=0, started=false, timer=null;
+  function step(){cur=(cur+1)%STAGES.length;renderStage(cur);}
+  function startCycle(){if(!timer)timer=setInterval(step,3000);}
+  function stopCycle(){if(timer){clearInterval(timer);timer=null;}}
+  [].forEach.call(owner.querySelectorAll('.tourDots span'),function(d,i){d.style.cursor='pointer';d.setAttribute('role','button');d.addEventListener('click',function(){cur=i;renderStage(cur);stopCycle();startCycle();});});
+  var mon=owner.querySelector('.monitor');
+  if(mon){mon.addEventListener('mouseenter',stopCycle);mon.addEventListener('mouseleave',function(){if(owner.classList.contains('in'))startCycle();});}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){owner.classList.add('in');if(!started){started=true;renderStage(0);}startCycle();}else{stopCycle();}});},{threshold:.2});
   io.observe(owner);
 })();
 </script>
@@ -627,9 +661,9 @@
   function clampT(){ if(targetY < 0) targetY = 0; var m = maxY(); if(targetY > m) targetY = m; }
   function frame(){
     var d = targetY - currentY;
-    if(Math.abs(d) < 0.4){ currentY = targetY; window.scrollTo(0, currentY); running = false; return; }
+    if(Math.abs(d) < 0.4){ currentY = targetY; window.scrollTo(0, Math.round(currentY)); running = false; return; }
     currentY += d * EASE;
-    window.scrollTo(0, currentY);
+    window.scrollTo(0, Math.round(currentY));
     requestAnimationFrame(frame);
   }
   function kick(){ if(!running){ running = true; requestAnimationFrame(frame); } }

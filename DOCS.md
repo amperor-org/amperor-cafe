@@ -129,7 +129,7 @@ kured-cafe-landing/                (folder name is legacy; brand = AMPEROR)
 │   ├── assets/
 │   │   ├── walkin/    wi_001..128.webp
 │   │   ├── turntable/ t_001..120.webp
-│   │   ├── promo-latte.webp / promo-matcha.webp / promo-strawberry.webp
+│   │   ├── menu-latte.webp / menu-matcha.webp / menu-strawberry.webp / menu-coldbrew.webp  (phone-mock menu photos, 3:4)
 │   │   └── qr-brand.png           branded QR composited onto the table card
 │   ├── .vercel/                   project link (gitignored)
 │   ├── .env.local                 Vercel OIDC token (gitignored — never commit)
