@@ -410,7 +410,7 @@
   // phases: glide .0-.11 | dim .12-.17 | deck .17-.72 | rise/table .72-.86 | rotate .80-.92 | resolve .92-1
   function render(p){
     var gp=Math.min(1,p/0.09);
-    walkSeq.draw(gp*0.75);
+    walkSeq.draw(gp*0.80);
     heroCap.style.opacity=Math.max(0,1-gp*2.8);
 
     var dimv=clamp((p-0.15)/0.05)*(1-clamp((p-0.72)/0.06));
