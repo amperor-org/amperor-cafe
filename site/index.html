@@ -41,11 +41,13 @@
 
   .cap{position:absolute;top:50%;transform:translateY(-50%);width:min(34vw,400px);z-index:2}
   .cap--l{left:clamp(24px,6vw,84px)}
-  .cap--r{right:clamp(24px,6vw,84px);text-align:right}
+  .cap--r{right:clamp(24px,6vw,84px);text-align:right;width:min(58vw,720px)}
   .cap--c{left:50%;top:8%;transform:translateX(-50%);text-align:center;width:auto;max-width:min(84vw,640px)}
   .cap .eyebrow{display:block;margin-bottom:15px;color:var(--accent2)}
   .cap h2{font-size:clamp(1.8rem,4.2vw,3rem);color:var(--head)}
   .cap--c h2{font-size:clamp(1.6rem,3.6vw,2.6rem)}
+  .cap--r h2{font-size:clamp(1.45rem,2.65vw,2.15rem);white-space:nowrap}
+  @media(max-width:720px){.cap--r{width:min(86vw,520px)}.cap--r h2{white-space:normal}}
   .cap p{margin-top:15px;font-size:1.02rem;line-height:1.55;color:var(--dtext)}
 
   /* warm captions */
@@ -125,6 +127,19 @@
   .cototal{display:flex;justify-content:space-between;align-items:center;margin-top:3cqw;padding-top:3.4cqw;border-top:1.6px solid var(--k-line)}
   .cototal span{font-weight:700;font-size:3cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--sand)}
   .cototal b{font-weight:700;font-size:5.2cqw;color:var(--ink);font-variant-numeric:tabular-nums}
+  .coadd .ah{font-weight:700;font-size:2.5cqw;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);margin-bottom:3cqw}
+  .coitem{display:flex;align-items:center;gap:3.2cqw;background:#fff;border-radius:4cqw;padding:2.6cqw 3cqw;margin-bottom:2.6cqw;box-shadow:0 3cqw 10cqw -8cqw rgba(44,40,37,.16)}
+  .coitem .th{width:12cqw;height:12cqw;border-radius:3cqw;background:var(--k-line) center/cover;flex:none}
+  .coitem .th--emo{display:grid;place-items:center;font-size:6cqw;background:linear-gradient(150deg,#f0e6d3,#e2d3b6)}
+  .coitem .info{flex:1;min-width:0}
+  .coitem .info b{display:block;font-weight:600;font-size:3.2cqw;color:var(--ink);line-height:1.15}
+  .coitem .info span{font-size:2.5cqw;color:var(--sand)}
+  .coitem .pr{font-weight:600;font-size:2.9cqw;color:var(--ink);margin-right:1.4cqw;font-variant-numeric:tabular-nums}
+  .coitem .addb{width:8cqw;height:8cqw;border-radius:50%;background:var(--k-tile);color:var(--ink);display:grid;place-items:center;font-size:4.4cqw;line-height:0;flex:none}
+  .copromo{display:flex;align-items:center;gap:3cqw;margin-top:1.4cqw;padding:3.4cqw 4cqw;border-radius:4cqw;background:linear-gradient(100deg,rgba(192,135,46,.15),rgba(230,182,103,.06));border:1px solid rgba(192,135,46,.3)}
+  .copromo .ic{width:9cqw;height:9cqw;border-radius:50%;background:rgba(192,135,46,.18);display:grid;place-items:center;flex:none;font-size:4.4cqw}
+  .copromo b{font-weight:600;font-size:2.95cqw;color:var(--ink);display:block;line-height:1.25}
+  .copromo span{font-size:2.5cqw;color:var(--sand)}
   .cobtn{margin-top:auto;height:13cqw;border-radius:99cqw;background:var(--ink);color:#FAF7F2;display:flex;align-items:center;justify-content:center;gap:2.6cqw;font-weight:600;font-size:3.6cqw}
   .cobtn svg{width:3.6cqw;height:3.6cqw}
   .scr-ok{background:linear-gradient(180deg,#FAF7F2,#F0E9DE);display:grid;place-items:center;font-family:var(--ui);padding:7cqw 6cqw}
@@ -164,8 +179,9 @@
   .btn:hover{background:var(--accent2);transform:translateY(-2px)}
 
   /* owner dashboard reveal */
-  .owner{position:relative;background:linear-gradient(180deg,#100C09,#181009);color:var(--cream);padding:clamp(70px,10vh,130px) 0}
-  .owner__pin{display:block}
+  .owner{position:relative;height:300vh;background:linear-gradient(180deg,#100C09,#181009);color:var(--cream)}
+  .owner__pin{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(12px,2.4vh,36px) 0}
+  .owner__pin>.wrap{width:100%}
   .owner__intro{max-width:640px;margin:0 auto clamp(12px,2.2vw,26px);text-align:center}
   .owner__intro .eyebrow{color:var(--accent2)}
   .owner__intro h2{font-size:clamp(1.7rem,3.7vw,2.7rem);color:var(--head);margin:.3em 0 0}
@@ -365,6 +381,14 @@
         <div class="coline"><span class="n"><em>1×</em>Matcha Cloud</span><span class="p">AED 32.00</span></div>
         <div class="cototal"><span>Total</span><b>AED 60.00</b></div>
       </div>
+      <div class="coadd">
+        <div class="ah">You might also like</div>
+        <div class="coitem"><span class="th" style="background-image:url('assets/menu-strawberry.webp')"></span><span class="info"><b>Strawberry Cloud</b><span>Coconut, strawberry</span></span><span class="pr">AED 40</span><span class="addb">+</span></div>
+        <div class="coitem"><span class="th" style="background-image:url('assets/menu-coldbrew.webp')"></span><span class="info"><b>Cold Brew</b><span>18-hour slow steep</span></span><span class="pr">AED 26</span><span class="addb">+</span></div>
+        <div class="coitem"><span class="th th--emo">🥐</span><span class="info"><b>Almond Croissant</b><span>Warm, flaky, house-made</span></span><span class="pr">AED 14</span><span class="addb">+</span></div>
+      </div>
+      <div class="copromo"><span class="ic">🎁</span><div><b>Add a treat, save 10%</b><span>On any pastry with your order</span></div></div>
+      <div class="copromo"><span class="ic">⭐</span><div><b>You'll earn 60 points</b><span>500 points = a free drink on us</span></div></div>
       <div class="cobtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pay AED 60.00</div>
     </div>
     <div class="scr scr-ok" id="sOk"><div class="okcard">
@@ -621,16 +645,28 @@
     var dots=owner.querySelectorAll('.tourDots span');[].forEach.call(dots,function(d,idx){d.classList.toggle('on',idx===i);});
     countUp();drawChart(i);
   }
-  // Static monitor: the dashboard auto-cycles through the views on a timer
-  // (no scroll pinning). Pauses on hover; the dots are clickable.
-  var cur=0, started=false, timer=null;
-  function step(){cur=(cur+1)%STAGES.length;renderStage(cur);}
-  function startCycle(){if(!timer)timer=setInterval(step,3000);}
-  function stopCycle(){if(timer){clearInterval(timer);timer=null;}}
-  [].forEach.call(owner.querySelectorAll('.tourDots span'),function(d,i){d.style.cursor='pointer';d.setAttribute('role','button');d.addEventListener('click',function(){cur=i;renderStage(cur);stopCycle();startCycle();});});
-  var mon=owner.querySelector('.monitor');
-  if(mon){mon.addEventListener('mouseenter',stopCycle);mon.addEventListener('mouseleave',function(){if(owner.classList.contains('in'))startCycle();});}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){owner.classList.add('in');if(!started){started=true;renderStage(0);}startCycle();}else{stopCycle();}});},{threshold:.2});
+  // Scroll-driven: as the user scrolls through the pinned section the sidebar tab
+  // advances Dashboard -> Orders -> Sales. The monitor stays a fixed size throughout.
+  var curStage=-1, started=false;
+  function stageFromScroll(){
+    var vh=window.innerHeight||1, denom=owner.offsetHeight-vh;
+    if(denom<=8) return 0;
+    var p=(-owner.getBoundingClientRect().top)/denom; p=p<0?0:(p>1?1:p);
+    var st=Math.floor(p*STAGES.length*0.999);
+    return st<0?0:(st>STAGES.length-1?STAGES.length-1:st);
+  }
+  function updateTour(){
+    if(!owner.classList.contains('in')) return;
+    var st=stageFromScroll();
+    if(st!==curStage){curStage=st;renderStage(st);}
+  }
+  var stick=false;
+  function onScroll(){if(!stick){stick=true;requestAnimationFrame(function(){stick=false;updateTour();});}}
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll,{passive:true});
+  // dots reflect the current view; click to jump to it
+  [].forEach.call(owner.querySelectorAll('.tourDots span'),function(d,i){d.style.cursor='pointer';d.setAttribute('role','button');d.addEventListener('click',function(){var vh=window.innerHeight,denom=owner.offsetHeight-vh,top=owner.getBoundingClientRect().top+(window.pageYOffset||0);window.scrollTo(0,Math.round(top+denom*((i+0.5)/STAGES.length)));});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){owner.classList.add('in');if(!started){started=true;curStage=0;renderStage(0);}updateTour();}});},{threshold:.01});
   io.observe(owner);
 })();
 </script>
