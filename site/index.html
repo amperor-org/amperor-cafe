@@ -41,13 +41,13 @@
 
   .cap{position:absolute;top:50%;transform:translateY(-50%);width:min(34vw,400px);z-index:2}
   .cap--l{left:clamp(24px,6vw,84px)}
-  .cap--r{right:clamp(24px,6vw,84px);text-align:right;width:min(58vw,720px)}
+  .cap--r{right:clamp(24px,6vw,84px);text-align:right;width:fit-content;max-width:min(58vw,720px)}
   .cap--c{left:50%;top:8%;transform:translateX(-50%);text-align:center;width:auto;max-width:min(84vw,640px)}
   .cap .eyebrow{display:block;margin-bottom:15px;color:var(--accent2)}
   .cap h2{font-size:clamp(1.8rem,4.2vw,3rem);color:var(--head)}
   .cap--c h2{font-size:clamp(1.6rem,3.6vw,2.6rem)}
   .cap--r h2{font-size:clamp(1.45rem,2.65vw,2.15rem);white-space:nowrap}
-  @media(max-width:720px){.cap--r{width:min(86vw,520px)}.cap--r h2{white-space:normal}}
+  @media(max-width:720px){.cap--r{width:min(86vw,520px);max-width:none}.cap--r h2{white-space:normal}}
   .cap p{margin-top:15px;font-size:1.02rem;line-height:1.55;color:var(--dtext)}
 
   /* warm captions */
@@ -200,10 +200,12 @@
   .side__logo b{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.02em}
   .side__logo b i{color:var(--accent2);font-style:italic;font-weight:400}
   .side__logo span{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:#8a7657;margin-top:4px}
-  .side__nav{display:flex;flex-direction:column;gap:2px;flex:1}
-  .side__nav a{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:9px;font-size:.86rem;font-weight:500;color:#9c8a68;text-decoration:none;cursor:default}
+  .side__nav{display:flex;flex-direction:column;gap:2px;flex:1;position:relative}
+  .side__hi{position:absolute;left:0;right:0;top:0;height:38px;border-radius:9px;background:linear-gradient(90deg,rgba(192,135,46,.26),rgba(192,135,46,.04));box-shadow:inset 2.5px 0 0 var(--accent);transform:translateY(0);opacity:0;pointer-events:none;z-index:0;transition:transform .5s cubic-bezier(.6,0,.2,1),height .3s ease,opacity .3s ease;will-change:transform}
+  .side__nav a{position:relative;z-index:1;display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:9px;font-size:.86rem;font-weight:500;color:#9c8a68;text-decoration:none;cursor:default;transition:color .45s ease}
   .side__nav a svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;flex:none}
-  .side__nav a.on{background:linear-gradient(90deg,rgba(192,135,46,.26),rgba(192,135,46,.04));color:#fff;box-shadow:inset 2.5px 0 0 var(--accent)}
+  .side__nav a.on{color:#fff}
+  @media(prefers-reduced-motion:reduce){.side__hi{transition:opacity .2s ease}}
   .side__u{display:flex;align-items:center;gap:10px;padding:13px 8px 2px;border-top:1px solid #2a2016;margin-top:8px}
   .side__u .av{width:31px;height:31px;border-radius:50%;background:var(--accent);color:#1a130a;display:grid;place-items:center;font-weight:800;font-size:.78rem}
   .side__u b{font-size:.82rem;color:#e8ddca;display:block;font-weight:600}
@@ -427,6 +429,7 @@
     <aside class="side">
       <div class="side__logo"><b>Amperor <i>café</i></b><span>Owner console</span></div>
       <nav class="side__nav">
+        <span class="side__hi" aria-hidden="true"></span>
         <a class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
         <a><svg viewBox="0 0 24 24"><path d="M4 4h16v4H4z"/><path d="M4 12h16M4 17h10"/></svg>Menu</a>
         <a><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Orders</a>
@@ -629,6 +632,8 @@
   function renderStage(i){
     var s=STAGES[i];
     var navs=owner.querySelectorAll('.side__nav a');[].forEach.call(navs,function(a,idx){a.classList.toggle('on',idx===s.nav);});
+    var hi=owner.querySelector('.side__hi'),act=navs[s.nav];
+    if(hi&&act){var first=!hi.dataset.init;if(first)hi.style.transition='none';hi.style.height=act.offsetHeight+'px';hi.style.transform='translateY('+act.offsetTop+'px)';hi.style.opacity='1';if(first){hi.getBoundingClientRect();hi.style.transition='';hi.dataset.init='1';}}
     var segs=owner.querySelectorAll('.mseg button');[].forEach.call(segs,function(b,idx){b.classList.toggle('on',idx===s.seg);});
     owner.querySelector('.mt-t').textContent=s.title;owner.querySelector('.mt-s').textContent=s.sub;
     var kp=owner.querySelectorAll('.mkpi');
